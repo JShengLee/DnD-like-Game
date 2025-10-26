@@ -1,0 +1,217 @@
+{
+    "Dwarf":
+    {
+        "Ability_Score":
+        {
+            "Constitution": 2
+        },
+        "Size": "Medium",
+        "Speed": 25,
+        "Languages": ["Common", "Dwarvish"],
+        "Traits": ["Darkvision", "Dwarven Resilience", "Dwarven Combat Training", "Stonecunning"],
+        "Tool_Proficiency": ["Smith's Tool", "Brewer's Supplies", "Mason's Tools"],
+        "Subrace": 
+        {
+            "Hill_Dwarf": 
+            {
+                "Ability_Score": 
+                {
+                    "Wisdom": 1
+                },
+                "Traits": ["Dwarven Toughness"]
+            },
+            "Mountain_Dwarf": 
+            {
+                "Ability_Score": 
+                {
+                    "Strength": 2
+                },
+                "Traits": ["Dwarven Armor Training"]
+            }
+        }
+    },
+    "Elf":
+    {
+        "Ability_Score":
+        {
+            "Dexterity": 2
+        },
+        "Size": "Medium",
+        "Speed": 30,
+        "Languages": ["Common", "Elvish"],
+        "Traits": ["Darkvision", "Keen Senses", "Fey Ancestry", "Trance"],
+        "Subrace": 
+        {
+            "High_Elf": 
+            {
+                "Ability_Score": 
+                {
+                    "Intelligence": 1
+                },
+                "Traits": ["Elf Weapon Training", "Cantrip", "Extra Language"]
+            },
+            "Wood_Elf": 
+            {
+                "Ability_Score": 
+                {
+                    "Wisdom": 1
+                },
+                "Traits": ["Elf Weapon Training", "Fleet of Foot", "Mask of the Wild"]
+            },
+            "Dark_Elf": 
+            {
+                "Ability_Score": 
+                {
+                    "Charisma": 1
+                },
+                "Traits": ["Superior Darkvision", "Sunlight Sensitivity", "Drow Magic", "Drow Weapon Training"]
+            }
+        }
+    },
+    "Halfling":
+    {
+        "Ability_Score":
+        {
+            "Dexterity": 2
+        },
+        "Size": "Small",
+        "Speed": 25,
+        "Languages": ["Common", "Halfling"],
+        "Traits": ["Lucky", "Brave", "Halfling Nimbleness"],
+        "Subrace": 
+        {
+            "Lightfoot": 
+            {
+                "Ability_Score": 
+                {
+                    "Charisma": 1
+                },
+                "Traits": ["Naturally Stealthy"]
+            },
+            "Stout": 
+            {
+                "Ability_Score": 
+                {
+                    "Constitution": 1
+                },
+                "Traits": ["Stout Resilience"]
+            }
+        }
+    },
+    "Human":
+    {
+        "Ability_Score":
+        {
+            "All Ability": 1
+        },
+        "Size": "Medium",
+        "Speed": 30,
+        "Languages": ["Common", "1 of Any Language"]
+    },
+    "Dragonborn":
+    {
+        "Ability_Score":
+        {
+            "Strength": 2,
+            "Charisma": 1
+        },
+        "Size": "Medium",
+        "Speed": 30,
+        "Lanuguage": ["Common", "Draconic"],
+        "Traits": ["Breath Weapon"],
+        "Subrace":
+        {
+            "Black":
+            {
+                "Damage_Type": "Acid",
+                "Resistance": "Acid",
+                "Breath_Weapon": "5 by 30ft line (Dex save)"
+            },
+            "Blue":
+            {
+                "Damage_Type": "Lightning",
+                "Resistance": "Lightning",
+                "Breath_Weapon": "5 by 30ft line (Dex save)"
+            },
+            "Brass":
+            {
+                "Damage_Type": "Fire",
+                "Resistance": "Fire",
+                "Breath_Weapon": "5 by 30ft line (Dex save)"
+            },
+            "Bronze":
+            {
+                "Damage_Type": "Lightning",
+                "Resistance": "Lightning",
+                "Breath_Weapon": "5 by 30ft line (Dex save)"
+            },
+            "Copper":
+            {
+                "Damage_Type": "Acid",
+                "Resistance": "Acid",
+                "Breath_Weapon": "5 by 30ft line (Dex save)"
+            },
+            "Gold":
+            {
+                "Damage_Type": "Fire",
+                "Resistance": "Fire",
+                "Breath_Weapon": "15ft cone (Dex save)"
+            },
+            "Green":
+            {
+                "Damage_Type": "Poison",
+                "Resistance": "Poison",
+                "Breath_Weapon": "15ft cone (Con save)"
+            },
+            "Red":
+            {
+                "Damage_Type": "Fire",
+                "Resistance": "Fire",
+                "Breath_Weapon": "15ft cone (Dex save)"
+            },
+            "Silver":
+            {
+                "Damage_Type": "Cold",
+                "Resistance": "Cold",
+                "Breath_Weapon": "15ft cone (Con save)"
+            },
+            "White":
+            {
+                "Damage_Type": "Cold",
+                "Resistance": "Cold",
+                "Breath_Weapon": "15ft cone (Con save)"
+            }
+        }
+    },
+    "Gnome": 
+    {
+        "Ability_Score":
+        {
+            "Intelligence": 2
+        },
+        "Size": "Small",
+        "Speed": 25,
+        "Languages": ["Common", "Gnomish"],
+        "Traits": ["Darkvision", "Gnome Cunning"],
+        "Subrace": 
+        {
+            "Forest_Gnome": 
+            {
+                "Ability_Score": 
+                {
+                    "Dexterity": 1
+                },
+                "Traits": ["Natural Illusionist", "Speak with Small Beasts"]
+            },
+            "Rock_Gnome": 
+            {
+                "Ability_Score": 
+                {
+                    "Constitution": 1
+                },
+                "Traits": ["Artificer's Lore"],
+                "Tinker": ["Clockwork Toy", "Fire Starter", "Music Box"]
+            }
+        }
+    }
+}
