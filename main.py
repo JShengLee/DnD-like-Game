@@ -13,11 +13,14 @@ from kivy.clock import Clock
 from kivy.uix.image import Image
 from kivy.uix.textinput import TextInput
 import ctypes
+import json
 
 user32 = ctypes.windll.user32
 user32.SetProcessDPIAware()
 screenWidth = user32.GetSystemMetrics(0)
 screenHeight = user32.GetSystemMetrics(1)
+
+current_dir = Path(__file__).parent
 
 
 def CreateButton(text):
@@ -134,30 +137,27 @@ class CharacterCreation(Screen):
             width=300,
             height=50
         )
-        dropdown = DropDown()
+        classDropdown = DropDown()
         for classInfo in ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]:
             btn = Button(text=classInfo, size_hint_y=None, height=44)
-            btn.bind(on_release=lambda btn, text=classInfo: dropdown.select(btn.text))
-            dropdown.add_widget(btn)
+            btn.bind(on_release=lambda btn, text=classInfo: classDropdown.select(btn.text))
+            classDropdown.add_widget(btn)
         classButton = Button(text="Choose Class", size_hint=(None, None), size=(300, 50))
-        classButton.bind(on_release=dropdown.open)
-        dropdown.bind(on_select=lambda instance, value: setattr(classButton, 'text', value))
-        self.race = TextInput(
-            hint_text="Enter you name...",
-            multiline=False,
-            font_size=20,
-            size_hint=(None, None),
-            width=300,
-            height=50
-        )
-        self.alignment = TextInput(
-            hint_text="Enter you name...",
-            multiline=False,
-            font_size=20,
-            size_hint=(None, None),
-            width=300,
-            height=50
-        )
+        classButton.bind(on_release=classDropdown.open)
+        classDropdown.bind(on_select=lambda instance, value: setattr(classButton, 'text', value))
+
+        race_path = current_dir / "raceInfo.json"
+        with open(race_path, "r") as f:
+            raceData = json.load(f)
+
+        raceDropdown = DropDown()
+        for race_name in raceData.keys():
+            btn = Button(text=race_name, size_hint_y=None, height=44)
+            btn.bind(on_release=lambda btn, race_name=race_name: raceDropdown.select(race_name))
+            raceDropdown.add_widget(btn)
+        raceBtn = Button(text="Choose Race", size_hint=(None, None), size=(300, 50))
+        raceBtn.bind(on_release=raceDropdown.open)
+        raceDropdown.bind(on_select=lambda instance, value: setattr(raceBtn, 'text', value))
 
         startBtn.bind(on_release=self.Hello)
         # anchorRight = AnchorLayout(anchor_x='right', anchor_y='top')
@@ -171,9 +171,8 @@ class CharacterCreation(Screen):
         # self.add_widget(anchorRight)
         textBox.add_widget(self.characterName)
         # textBox.add_widget(startBtn)
+        textBox.add_widget(raceBtn)
         textBox.add_widget(classButton)
-        textBox.add_widget(self.race)
-        textBox.add_widget(self.alignment)
         textAnchor.add_widget(textBox)
         boxTopLeft.add_widget(textAnchor)
         boxTopRight.add_widget(self.logPanel)
